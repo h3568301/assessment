@@ -1,0 +1,143 @@
+{
+  "processed_tickets": [
+    {
+      "ticket_id": "TKT001",
+      "title": "Please update customer email address",
+      "description": "Broker called - customer email needs changing from old@email.com to new@email.com",
+      "requester": "John Smith",
+      "created_date": "2026-01-05",
+      "priority": "high",
+      "category": "other",
+      "status": "open",
+      "validation": {
+        "is_valid": false,
+        "missing_fields": [
+          "category"
+        ]
+      },
+      "auto_categorised": true,
+      "routing_team": "Operations Team",
+      "pri": {
+        "days_open": 9,
+        "threshold": 1,
+        "status": "overdue"
+      },
+      "needs_attention": true
+    },
+    {
+      "ticket_id": "TKT002",
+      "title": "New starter access request",
+      "description": "New underwriter starting Monday, needs all system access",
+      "requester": "Jane Doe",
+      "created_date": "2026-01-12",
+      "priority": "high",
+      "category": "system_access",
+      "status": "open",
+      "validation": {
+        "is_valid": false,
+        "missing_fields": [
+          "category"
+        ]
+      },
+      "auto_categorised": true,
+      "routing_team": "IT Team",
+      "pri": {
+        "days_open": 2,
+        "threshold": 1,
+        "status": "overdue"
+      },
+      "needs_attention": true
+    },
+    {
+      "ticket_id": "TKT003",
+      "title": "How do I use the pricing matrix?",
+      "description": "Broker asking for a price, not sure how to use the tool",
+      "requester": "Bob Wilson",
+      "created_date": "2026-01-10",
+      "priority": "low",
+      "category": "how_to_question",
+      "status": "open",
+      "validation": {
+        "is_valid": false,
+        "missing_fields": [
+          "category"
+        ]
+      },
+      "auto_categorised": true,
+      "routing_team": "Operations Team",
+      "pri": {
+        "days_open": 4,
+        "threshold": 7,
+        "status": "within_time_limit"
+      },
+      "needs_attention": true
+    },
+    {
+      "ticket_id": "TKT004",
+      "title": "",
+      "description": "Need help with something",
+      "requester": "Alice Brown",
+      "created_date": "2026-01-11",
+      "priority": "medium",
+      "category": "other",
+      "status": "open",
+      "validation": {
+        "is_valid": false,
+        "missing_fields": [
+          "title",
+          "category"
+        ]
+      },
+      "auto_categorised": true,
+      "routing_team": "Operations Team",
+      "pri": {
+        "days_open": 3,
+        "threshold": 3,
+        "status": "at_risk"
+      },
+      "needs_attention": true
+    },
+    {
+      "ticket_id": "TKT005",
+      "title": "System showing error when saving application",
+      "description": "Getting error code 500 when trying to save",
+      "requester": "Charlie Green",
+      "created_date": "2026-01-08",
+      "priority": "medium",
+      "category": "technical_issue",
+      "status": "open",
+      "validation": {
+        "is_valid": false,
+        "missing_fields": [
+          "category"
+        ]
+      },
+      "auto_categorised": true,
+      "routing_team": "IT Team",
+      "pri": {
+        "days_open": 6,
+        "threshold": 3,
+        "status": "overdue"
+      },
+      "needs_attention": true
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "valid": 0,
+    "invalid": 5,
+    "overdue": 3,
+    "at_risk": 1,
+    "within_time": 0,
+    "by_category": {
+      "other": 2,
+      "system_access": 1,
+      "how_to_question": 1,
+      "technical_issue": 1
+    },
+    "by_team": {
+      "Operations Team": 3,
+      "IT Team": 2
+    }
+  }
+}
