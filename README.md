@@ -1,13 +1,13 @@
 # Ticket Processing & Automation System
 
-A Python-based ticket processing system that automates the categorization, validation, and routing of incoming support tickets. Built as a demonstration of clean coding principles for the KSEYE technical assessment.
+A Python-based ticket processing system that automates the categorization, validation, and routing of incoming support tickets.
 
 ## Features
 
 - **Ticket Validation** - Validates tickets against required fields
 - **Auto-Categorization** - Intelligent keyword-based category assignment
 - **Smart Routing** - Maps categories to appropriate teams (Dev, IT, HR, Operations, Product)
-- **SLA Tracking** - Calculates priority status (overdue, at_risk, within_time_limit)
+- **Tracking** - Calculates priority status (overdue, at_risk, within_time_limit)
 - **Attention Flagging** - Marks tickets needing human review
 - **Summary Reports** - Generates actionable statistics
 
@@ -54,7 +54,7 @@ All business rules are centralized in `config/settings.py`:
 
 | Setting | Description |
 |---------|-------------|
-| `PRIORITY_LEVEL` | SLA thresholds by priority (high: 1 day, medium: 3 days, low: 7 days) |
+| `PRIORITY_LEVEL` | Priority (high: 1 day, medium: 3 days, low: 7 days) |
 | `REQUIRED_FIELDS` | Fields required for ticket validation |
 | `CATEGORY_ROUTING` | Maps categories to team assignments |
 | `CATEGORY_KEYWORDS` | Keywords for auto-categorization |
@@ -119,10 +119,3 @@ The system is designed for easy extension:
 - **Add categories** - Update `CATEGORY_KEYWORDS` in settings
 - **Modify routing** - Update `CATEGORY_ROUTING` mapping
 - **Change validation** - Adjust `REQUIRED_FIELDS` list
-- **API integration** - Processor logic is isolated for easy integration
-- **AI enhancement** - Replace keyword matching with ML model
-- **Database connection** - Replace file I/O with database operations
-
-## License
-
-This project was created for the KSEYE technical assessment.

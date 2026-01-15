@@ -27,7 +27,8 @@ def validate_date_format(date_string):
     
 
 # Automatically assign category based on title and description keywords.
-# Args: ticket (dict): Ticket data, category_keywords (dict): Keywords for each category, default_category (str): Default if no match found
+# Args: ticket (dict): Ticket data, category_keywords (dict): Keywords for each category, 
+# default_category (str): Default if no match found
 # Returns: str: Matched category or default
 def auto_categorise(ticket, category_keywords, default_category):
     # Combine title and description for searching
@@ -41,14 +42,16 @@ def auto_categorise(ticket, category_keywords, default_category):
     
     return default_category
 
+# Get the team responsible for handling this category
+# Args: ticket (dict): category (str): Ticket category, category_routing (dict): Category to team mapping
+# Returns: str: Team name(s) responsible
 def get_routing_team(category, category_routing):
-
     return category_routing.get(category, "Operations Team")
 
     
-    # Calculate how many days a ticket has been open.
-    # Args: created_date (str): Date ticket was created (YYYY-MM-DD)
-    # Returns: int: Number of days open, or -1 if date invalid
+# Calculate how many days a ticket has been open.
+# Args: created_date (str): Date ticket was created (YYYY-MM-DD)
+# Returns: int: Number of days open, or -1 if date invalid
 def calculate_days_open(created_date):
     if not validate_date_format(created_date):
         return -1
@@ -59,15 +62,15 @@ def calculate_days_open(created_date):
     
     return delta.days
 
-    # Check if ticket is within the time, at risk, or overdue.
-    # Args: ticket (dict): Ticket data, priority_level (dict): days by priority
-    # Returns: dict: status with days_open, threshold, and status
+# Check if ticket is within the time, at risk, or overdue.
+# Args: ticket (dict): Ticket data, priority_level (dict): days by priority
+# Returns: dict: status with days_open, threshold, and status
 def check_priority_status(ticket, priority_level):
     days_open = calculate_days_open(ticket.get("created_date", ""))
     priority = ticket.get("priority", "medium")
     threshold = priority_level.get(priority, 3)
     
-    # Determine SLA status
+    # Determine priority status
     if days_open < 0:
         status = "unknown"
     elif days_open > threshold:
@@ -75,17 +78,16 @@ def check_priority_status(ticket, priority_level):
     elif days_open == threshold:
         status = "at_risk"
     else:
-        status = "within_time_limit"
-    
+        status = "within_time"
     return {
         "days_open": days_open,
         "threshold": threshold,
         "status": status
     }
 
-    # Process a single ticket: validate, categorise, check priority, and route.
-    # Args: ticket (dict): Raw ticket data, config (dict): Configuration settings
-    # Returns: dict: Processed ticket with all enrichments
+# Process a single ticket: validate, categorise, check priority, and route.
+# Args: ticket (dict): Raw ticket data, config (dict): Configuration settings
+# Returns: dict: Processed ticket with all enrichments
 def process_ticket(ticket, config):
     result = ticket.copy()
     
@@ -146,7 +148,7 @@ def process_all_tickets(tickets, config):
         else:
             summary["invalid"] += 1
         
-        # Update pri counts
+        # Update priority counts
         pri_status = result["pri"]["status"]
         if pri_status in summary:
             summary[pri_status] += 1

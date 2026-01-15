@@ -18,7 +18,7 @@
       "auto_categorised": true,
       "routing_team": "Operations Team",
       "pri": {
-        "days_open": 9,
+        "days_open": 10,
         "threshold": 1,
         "status": "overdue"
       },
@@ -42,7 +42,7 @@
       "auto_categorised": true,
       "routing_team": "IT Team",
       "pri": {
-        "days_open": 2,
+        "days_open": 3,
         "threshold": 1,
         "status": "overdue"
       },
@@ -66,9 +66,9 @@
       "auto_categorised": true,
       "routing_team": "Operations Team",
       "pri": {
-        "days_open": 4,
+        "days_open": 5,
         "threshold": 7,
-        "status": "within_time_limit"
+        "status": "within_time"
       },
       "needs_attention": true
     },
@@ -91,9 +91,9 @@
       "auto_categorised": true,
       "routing_team": "Operations Team",
       "pri": {
-        "days_open": 3,
+        "days_open": 4,
         "threshold": 3,
-        "status": "at_risk"
+        "status": "overdue"
       },
       "needs_attention": true
     },
@@ -115,7 +115,7 @@
       "auto_categorised": true,
       "routing_team": "IT Team",
       "pri": {
-        "days_open": 6,
+        "days_open": 7,
         "threshold": 3,
         "status": "overdue"
       },
@@ -126,9 +126,9 @@
     "total": 5,
     "valid": 0,
     "invalid": 5,
-    "overdue": 3,
-    "at_risk": 1,
-    "within_time": 0,
+    "overdue": 4,
+    "at_risk": 0,
+    "within_time": 1,
     "by_category": {
       "other": 2,
       "system_access": 1,
